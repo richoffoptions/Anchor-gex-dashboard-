@@ -21,17 +21,27 @@ export default function Home() {
   const [priceData, setPriceData] = useState(null);
   const [loading, setLoading] = useState(false);
   const [priceLoading, setPriceLoading] = useState(false);
+  const [expirationsLoading, setExpirationsLoading] = useState(true);
   const [error, setError] = useState(null);
 
   const loadExpirations = useCallback(async (sym) => {
+    setExpirationsLoading(true);
+    setError(null);
     try {
       const res = await fetch(`/api/expirations?symbol=${sym}`);
       const data = await res.json();
-      if (data.error) throw new Error(data.error);
+      if (data.error) throw new Error(data.detail || data.error);
       setExpirations(data.expirationDates || []);
       setExpiry(data.expirationDates?.[0] || null);
+      if (!data.expirationDates?.length) {
+        setError("No expirations came back for this symbol -- try refreshing.");
+      }
     } catch (e) {
       setError(e.message);
+      setExpirations([]);
+      setExpiry(null);
+    } finally {
+      setExpirationsLoading(false);
     }
   }, []);
 
@@ -44,7 +54,7 @@ export default function Home() {
         : `/api/gex?symbol=${sym}`;
       const res = await fetch(url);
       const data = await res.json();
-      if (data.error) throw new Error(data.error);
+      if (data.error) throw new Error(data.detail || data.error);
       setProfile(data);
     } catch (e) {
       setError(e.message);
@@ -69,6 +79,10 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
+    setProfile(null);
+    setPriceData(null);
+    setExpirations([]);
+    setExpiry(null);
     loadExpirations(symbol);
     loadPrice(symbol);
   }, [symbol, loadExpirations, loadPrice]);
@@ -76,6 +90,8 @@ export default function Home() {
   useEffect(() => {
     if (expiry) loadProfile(symbol, expiry);
   }, [symbol, expiry, loadProfile]);
+
+  const busy = expirationsLoading || loading || priceLoading;
 
   return (
     <main style={{ maxWidth: 1120, margin: "0 auto", padding: "22px 16px 60px" }}>
@@ -171,9 +187,11 @@ export default function Home() {
         </div>
       )}
 
-      {loading && (
+      {busy && !error && (
         <div className="panel" style={{ padding: 24, color: "var(--ink-dim)", marginBottom: 20 }}>
-          Pulling chain for {symbol}…
+          {expirationsLoading
+            ? `Connecting to Yahoo for ${symbol}… (can take up to ~20s if it's retrying a rate-limit)`
+            : `Pulling chain for ${symbol}…`}
         </div>
       )}
 
@@ -182,8 +200,7 @@ export default function Home() {
           className="panel"
           style={{ padding: 20, marginBottom: 20, borderColor: "var(--bear)", color: "var(--bear)" }}
         >
-          Couldn&apos;t load data: {error}. Yahoo occasionally rate-limits or has no chain listed for
-          this expiry — try another date or refresh.
+          {error}
         </div>
       )}
 
