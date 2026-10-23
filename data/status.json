@@ -1,10 +1,10 @@
 {
-  "lastRun": "2026-10-23T17:47:36.259Z",
+  "lastRun": "2026-10-23T21:10:22.934Z",
   "results": {
-    "NVDA": "error: Failed to get crumb, status 429, statusText: Too Many Requests",
-    "GOOGL": "error: Failed to get crumb, status 429, statusText: Too Many Requests",
-    "AMZN": "error: Failed to get crumb, status 429, statusText: Too Many Requests",
-    "SPY": "error: Failed to get crumb, status 429, statusText: Too Many Requests",
-    "QQQ": "error: Failed to get crumb, status 429, statusText: Too Many Requests"
+    "NVDA": "error: invalid json response body at https://query2.finance.yahoo.com/v7/finance/options/NVDA?formatted=false&lang=en-US&region=US&crumb=IzcK9MGvKXX reason: Unexpected token 'T', \"Too Many Requests\r\n\" is not valid JSON",
+    "GOOGL": "error: invalid json response body at https://query2.finance.yahoo.com/v7/finance/options/GOOGL?formatted=false&lang=en-US&region=US&crumb=IzcK9MGvKXX reason: Unexpected token 'T', \"Too Many Requests\r\n\" is not valid JSON",
+    "AMZN": "error: invalid json response body at https://query2.finance.yahoo.com/v7/finance/options/AMZN?formatted=false&lang=en-US&region=US&crumb=IzcK9MGvKXX reason: Unexpected token 'T', \"Too Many Requests\r\n\" is not valid JSON",
+    "SPY": "error: invalid json response body at https://query2.finance.yahoo.com/v7/finance/options/SPY?formatted=false&lang=en-US&region=US&crumb=IzcK9MGvKXX reason: Unexpected token 'T', \"Too Many Requests\r\n\" is not valid JSON",
+    "QQQ": "error: invalid json response body at https://query2.finance.yahoo.com/v7/finance/options/QQQ?formatted=false&lang=en-US&region=US&crumb=IzcK9MGvKXX reason: Unexpected token 'T', \"Too Many Requests\r\n\" is not valid JSON"
   }
 }
