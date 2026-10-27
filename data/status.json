@@ -1,10 +1,10 @@
 {
-  "lastRun": "2026-10-26T23:09:46.000Z",
+  "lastRun": "2026-10-27T18:37:03.565Z",
   "results": {
-    "NVDA": "error: invalid json response body at https://query2.finance.yahoo.com/v7/finance/options/NVDA?formatted=false&lang=en-US&region=US&crumb=iih2k51qoJi reason: Unexpected token 'T', \"Too Many Requests\r\n\" is not valid JSON",
-    "GOOGL": "error: invalid json response body at https://query2.finance.yahoo.com/v7/finance/options/GOOGL?formatted=false&lang=en-US&region=US&crumb=iih2k51qoJi reason: Unexpected token 'T', \"Too Many Requests\r\n\" is not valid JSON",
-    "AMZN": "error: invalid json response body at https://query2.finance.yahoo.com/v7/finance/options/AMZN?formatted=false&lang=en-US&region=US&crumb=iih2k51qoJi reason: Unexpected token 'T', \"Too Many Requests\r\n\" is not valid JSON",
-    "SPY": "error: invalid json response body at https://query2.finance.yahoo.com/v7/finance/options/SPY?formatted=false&lang=en-US&region=US&crumb=iih2k51qoJi reason: Unexpected token 'T', \"Too Many Requests\r\n\" is not valid JSON",
-    "QQQ": "error: invalid json response body at https://query2.finance.yahoo.com/v7/finance/options/QQQ?formatted=false&lang=en-US&region=US&crumb=iih2k51qoJi reason: Unexpected token 'T', \"Too Many Requests\r\n\" is not valid JSON"
+    "NVDA": "error: invalid json response body at https://query2.finance.yahoo.com/v7/finance/options/NVDA?formatted=false&lang=en-US&region=US&crumb=X1nCu1QRXPX reason: Unexpected token 'T', \"Too Many Requests\r\n\" is not valid JSON",
+    "GOOGL": "error: invalid json response body at https://query2.finance.yahoo.com/v7/finance/options/GOOGL?formatted=false&lang=en-US&region=US&crumb=X1nCu1QRXPX reason: Unexpected token 'T', \"Too Many Requests\r\n\" is not valid JSON",
+    "AMZN": "error: invalid json response body at https://query2.finance.yahoo.com/v7/finance/options/AMZN?formatted=false&lang=en-US&region=US&crumb=X1nCu1QRXPX reason: Unexpected token 'T', \"Too Many Requests\r\n\" is not valid JSON",
+    "SPY": "error: invalid json response body at https://query2.finance.yahoo.com/v7/finance/options/SPY?formatted=false&lang=en-US&region=US&crumb=X1nCu1QRXPX reason: Unexpected token 'T', \"Too Many Requests\r\n\" is not valid JSON",
+    "QQQ": "error: invalid json response body at https://query2.finance.yahoo.com/v7/finance/options/QQQ?formatted=false&lang=en-US&region=US&crumb=X1nCu1QRXPX reason: Unexpected token 'T', \"Too Many Requests\r\n\" is not valid JSON"
   }
 }
